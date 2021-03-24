@@ -1,5 +1,5 @@
     <?php
- 
+ session_start();
 $erro =false;
 $CPF = filter_input(INPUT_POST,'cpf',FILTER_SANITIZE_STRING);
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -12,6 +12,10 @@ if ($dados) {
     if(strlen($dados['cpf'])<11){
             $erro=true;
             $_SESSION['msg']="CPF inválido menos de 11 caracteres";
+        }
+
+        if(!isCpf($CPF)){
+            $_SESSION['msg']="CPF inválido não obedece parâmetros";
         }
 }
 
@@ -49,7 +53,7 @@ if(!$erro){
         
     }else{
        
-        echo "<script>alert('CPF inválido')</script>";
+        //echo "<script>alert('CPF inválido')</script>";
         
     }
       

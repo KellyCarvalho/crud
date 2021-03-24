@@ -1,7 +1,7 @@
 <?php
-session_start();
+
 require "config.php";
-require "inserirdados.php";
+require_once "inserirdados.php";
 require "navbar.php";
 ?>
 <!doctype html>
