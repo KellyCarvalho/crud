@@ -1,0 +1,16 @@
+body{
+    padding: 50px;
+}
+
+input{
+    width: 100%;
+}
+
+#input-sm{
+    width: 20%;
+}
+
+#input-lg{
+    width: 40%;
+}
+
