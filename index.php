@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "config.php";
 require "inserirdados.php";
 require "navbar.php";
@@ -22,6 +23,17 @@ require "navbar.php";
 
 <div class="container">
 <h1>Cadastro de Clientes</h1>
+<span>
+<?php
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+}
+
+?>
+
+</span>
+<br>
 <label class="form-label">Nome</label>
 
 
@@ -144,12 +156,7 @@ require "navbar.php";
 
 </div>
 
-<?php 
-if (isset($_GET["salvar"])) {
-   
 
-}
-?>
 
 
 
